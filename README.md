@@ -1,14 +1,14 @@
-# Welcome to lazy-ansible
+# Welcome to lazy-terraform
 
 ## Quick reference
 
 -   **Maintained by**  
     [Me : Klemens](https://gitlab.com/Klemens_Galus)
-You need a ssh folder with your ssh key.s ans a config file 
 
 ## Supported release tags  
-i don't recommend to use [latest](https://github.com/klemens-galus/lazy-ansible) because it correspond to my last push on master (Always fix your version with a tag) ! 
-- [1.0.2](https://github.com/klemens-galus/lazy-ansible/tree/1.0.2)
+i don't recommend to use [latest](https://github.com/klemens-galus/lazy-terraform) because it correspond to my last push on master (Always fix your version with a tag) ! 
+- [1.0.0](https://github.com/klemens-galus/lazy-terraform/tree/1.0.0)
+- [1.0.1](https://github.com/klemens-galus/lazy-terraform/tree/1.0.1)
 
 ## Supported beta tags
 **No beta for the moment**  
@@ -16,30 +16,17 @@ i don't recommend to use [latest](https://github.com/klemens-galus/lazy-ansible)
 ## Quick reference (cont.)
 
 **An issue ?**  
-[https://github.com/klemens-galus/lazy-ansible/issues](https://github.com/klemens-galus/lazy-ansible/issues)
+[https://github.com/klemens-galus/lazy-terraform/issues](https://github.com/klemens-galus/lazy-terraform/issues)
 
-## What is lazy-ansible
-First of all ansible is a way to automate application deployement and configuration management [here](https://www.ansible.com/).
+## What is lazy-terraform
+Lazy-terraform provide terraform and terragrunt 
 
-Lazy-ansible is a fast way to run ansible without installing it !
+First of all terraform is a way to automate infrastructure deployement, it use infrastructure as a code [here](https://www.terraform.io/).
+
+Lazy-terraform is a fast way to run terraform and terragrunt without installing them !
 
 ## How to run it !
 
 ```
-docker run -it -v <ssh folder>:/root/.ssh -v <ansible project folder>:/root/lazy-ansible test bash
+docker run -it -v <terraform project folder>:/root/lazy-terraform docker.io/klemensgalus/lazy-terraform:<tag> bash
 ```
-
-### SSH folder
-Your ssh folder need to look at this 
---
-  |-config
-  |-publickey.pub
-  |-privatekey
-
-In your config 
-```
-Host *
-  IdentityFile ~/.ssh/privatekey
-```
-
-You need to respect the `~/.ssh/`
