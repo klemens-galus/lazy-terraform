@@ -30,3 +30,4 @@ Lazy-terraform is a fast way to run terraform and terragrunt without installing 
 ```
 docker run -it -v <terraform project folder>:/root/lazy-terraform docker.io/klemensgalus/lazy-terraform:<tag> bash
 ```
+     
