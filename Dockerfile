@@ -1,11 +1,13 @@
 FROM ubuntu:22.04
 
-RUN mkdir /root/.ssh
+#CREATE THE USER ANSIBLE W/ PASSWORD
+RUN adduser --disabled-password \
+--gecos '' terraform
 
-VOLUME /root/lazy-terraform
-#VOLUME /root/.ssh
+VOLUME /home/terraform/lazy-terraform
 
 RUN apt update && \
+    apt-get -y install sudo && \
     apt install -y wget && \
     apt install -y gnupg software-properties-common && \
     wget -O- https://apt.releases.hashicorp.com/gpg | \
@@ -18,13 +20,25 @@ RUN apt update && \
     apt update && \
     apt install -y terraform
 
+RUN adduser terraform sudo
+
+#CREATE THE USER ANSIBLE TO THE SUDOER W/ PASSWORD
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> \
+/etc/sudoers
+
 RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.48.0/terragrunt_linux_amd64 && \
     mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
 
 COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+#SOMETIME SOMES '\r' NEED TO BE REMOVED 
+RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh
+
 RUN chmod +x /usr/local/bin/terragrunt
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+USER terraform
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
