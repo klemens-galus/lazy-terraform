@@ -1,4 +1,4 @@
-# Welcome to lazy-terraform 8
+# Welcome to lazy-terraform !
 
 ## Quick reference
 
