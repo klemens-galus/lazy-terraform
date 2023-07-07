@@ -9,6 +9,7 @@
 i don't recommend to use [latest](https://github.com/klemens-galus/lazy-terraform) because it correspond to my last push on master (Always fix your version with a tag) ! 
 - [1.0.0](https://github.com/klemens-galus/lazy-terraform/tree/1.0.0)
 - [1.0.1](https://github.com/klemens-galus/lazy-terraform/tree/1.0.1)
+- [1.0.2](https://github.com/klemens-galus/lazy-terraform/tree/1.0.2)
 
 ## Supported beta tags
 **No beta for the moment**  
