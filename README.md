@@ -6,10 +6,10 @@
     [Me : Klemens](https://gitlab.com/Klemens_Galus)
 
 ## Supported release tags  
-- [1.0.0](https://github.com/klemens-galus/lazy-terraform/tree/1.0.0)
-- [1.0.1](https://github.com/klemens-galus/lazy-terraform/tree/1.0.1)
-- [1.0.2](https://github.com/klemens-galus/lazy-terraform/tree/1.0.2)
 - [1.0.3](https://github.com/klemens-galus/lazy-terraform/tree/1.0.3)
+- [1.0.2](https://github.com/klemens-galus/lazy-terraform/tree/1.0.2)
+- [1.0.1](https://github.com/klemens-galus/lazy-terraform/tree/1.0.1)
+- [1.0.0](https://github.com/klemens-galus/lazy-terraform/tree/1.0.0)
 
 ## Supported beta tags
 **No beta for the moment**  
@@ -29,6 +29,6 @@ Lazy-terraform is a fast way to run terraform and terragrunt without installing 
 ## How to run it !
 
 ```
-docker run -it -v <terraform project folder>:/root/lazy-terraform docker.io/klemensgalus/lazy-terraform:<tag> bash
+docker run -it -v <terraform project folder>:/home/terraform/lazy-terraform docker.io/klemensgalus/lazy-terraform:<tag> bash
 ```
        
